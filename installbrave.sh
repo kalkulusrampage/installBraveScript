@@ -1,0 +1,11 @@
+#! /usr/bin/bash
+
+sudo apt install curl; wait
+
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg; wait
+
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list; wait
+
+sudo apt update; wait
+
+sudo apt install brave-browser; wait
